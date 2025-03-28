@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+/* 
+  GLOBAL RESET & BASE
+  Glassmorphism + neons for a modern "webapp" feel
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  text-transform: uppercase; /* Keep everything in uppercase for style */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* BACKGROUND VIDEO */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* CONTAINER with glassmorphism */
+.container {
+  width: 95%;
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 20px;
+  
+  /* Glass effect */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+  
+  /* Fade-in animation */
+  animation: fadeInContainer 1s ease forwards;
+}
+
+@keyframes fadeInContainer {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* TITLE with neon gradient text */
+.title {
+  font-size: 2em;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #fcee0c 0%, #f46036 50%, #2dd9f3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* VIDEO WRAPPER for YouTube (16:9 ratio) */
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  margin-bottom: 20px;
+}
+
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* CROSSWORD LAYOUT (only lyrics in this example) */
+.crossword-layout {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+.lyrics-container {
+  width: 100%;
+  max-width: 600px; 
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* HEADINGS */
+.lyrics-container h2 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  color: #fff;
+  /* subtle glow */
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+}
+
+/* LYRICS TEXT */
+#lyrics {
+  color: #ffffff;
+  line-height: 1.6;
+  text-align: left;
+  font-size: 0.95em;
+  margin-bottom: 15px;
+}
+
+/* FEEDBACK MESSAGE */
+.message {
+  margin-top: 20px;
+  font-size: 1.2em;
+  color: #ff7777;
+  font-weight: bold;
+  min-height: 30px;
+}
+
+/* LINK CONTAINER */
+.link-container {
+  margin-top: 20px;
+  display: none;
+}
+
+.link {
+  color: #ffdd00;
+  font-size: 1.2em;
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+.link:hover {
+  color: #ffffff;
+}
+
+/* INPUT BOXES (Lyrics blanks) */
+.input-box {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid #fff;
+  color: #fff;
+  margin: 0 2px;
+  padding: 2px 4px;
+  border-radius: 3px;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  width: auto;
+  text-transform: uppercase;
+}
+
+.input-box:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 5px #fff;
+}
+
+/* ANIMATION FOR CORRECT ANSWERS */
+@keyframes correct-animation {
+  0% {
+    transform: scale(1);
+    background-color: rgba(0, 255, 0, 0);
+  }
+  50% {
+    transform: scale(1.1);
+    background-color: rgba(0, 255, 0, 0.3);
+  }
+  100% {
+    transform: scale(1);
+    background-color: rgba(0, 255, 0, 0);
+  }
+}
+
+.correct {
+  color: #00ff00 !important; /* Bright green for success */
+  font-weight: 700;
+  animation: correct-animation 0.5s ease;
+}
+
+/* WRONG ANSWER FLASH */
+.wrong {
+  border: 2px solid red !important;
+}
+
+/* 
+  THE SLIDE-OUT CLUES PANEL
+  (Hidden by default, toggled with a button)
+*/
+#clues-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  padding: 10px 15px;
+  background: #f46036;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: background 0.3s ease;
+}
+
+#clues-toggle:hover {
+  background: #f24114;
+}
+
+/* The side panel itself */
+#clues-panel {
+  position: fixed;
+  top: 0;
+  right: -320px; /* Start off-screen to the right */
+  width: 320px;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  padding: 20px;
+  box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+  transition: right 0.3s ease;
+  z-index: 9998;
+}
+
+#clues-panel.open {
+  right: 0; /* Slide in */
+}
+
+#clues-panel h2 {
+  margin-bottom: 15px;
+  font-size: 1.3em;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+}
+
+#clues {
+  max-height: 80vh; /* scroll within the panel if it's long */
+  overflow-y: auto;
+  font-size: 0.9em;
+  line-height: 1.4;
+}
+
+.clue {
+  margin: 8px 0;
+  position: relative;
+  padding-left: 22px;
+}
+
+.clue::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #fcee0c;
+  font-size: 1em;
+}
+
+/* MEDIA QUERY for small screens */
+@media (max-width: 768px) {
+  .container {
+    margin: 10px auto;
+    padding: 15px;
+  }
+  
+  .title {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+  }
+
+  #lyrics {
+    font-size: 1em;
+  }
+}
