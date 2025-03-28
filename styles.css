@@ -190,14 +190,12 @@
   border: 2px solid red !important;
 }
 
-/* 
-  THE SLIDE-OUT CLUES PANEL
-  (Hidden by default, toggled with a button)
-*/
+/* CLUES TOGGLE BUTTON */
 #clues-toggle {
   position: fixed;
-  top: 20px;
-  right: 20px;
+  /* Remove the top property and replace it with bottom */
+  bottom: 20px;     
+  right: 20px;      
   z-index: 9999;
   padding: 10px 15px;
   background: #f46036;
@@ -213,6 +211,7 @@
 #clues-toggle:hover {
   background: #f24114;
 }
+
 
 /* The side panel itself */
 #clues-panel {
