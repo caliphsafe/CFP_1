@@ -58,7 +58,7 @@
 
 /* TITLE with neon gradient text */
 .title {
-  font-size: 1.5em;
+  font-size: 1.3em;
   margin-bottom: 20px;
   background: linear-gradient(90deg, #fcee0c 0%, #f46036 50%, #2dd9f3 100%);
   -webkit-background-clip: text;
@@ -101,7 +101,7 @@
 
 /* HEADINGS */
 .lyrics-container h2 {
-  font-size: 1.5em;
+  font-size: 1.0em;
   margin-bottom: 15px;
   color: #fff;
   /* subtle glow */
@@ -113,7 +113,7 @@
   color: #ffffff;
   line-height: 1.6;
   text-align: left;
-  font-size: 0.95em;
+  font-size: 0.7em;
   margin-bottom: 15px;
 }
 
