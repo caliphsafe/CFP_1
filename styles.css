@@ -58,7 +58,7 @@
 
 /* TITLE with neon gradient text */
 .title {
-  font-size: 2em;
+  font-size: 1.8em;
   margin-bottom: 20px;
   background: linear-gradient(90deg, #fcee0c 0%, #f46036 50%, #2dd9f3 100%);
   -webkit-background-clip: text;
