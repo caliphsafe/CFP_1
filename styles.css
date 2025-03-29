@@ -283,22 +283,4 @@
   #lyrics {
     font-size: 1em;
   }
-  
-.input-wrapper {
-  display: inline-flex;
-  align-items: center;
-  margin: 0 4px;
-}
-
-.clue-number {
-  font-size: 0.7em;
-  color: #fff;
-  background: #f46036;
-  padding: 2px 5px;
-  border-radius: 50%;
-  margin-right: 3px;
-  font-weight: bold;
-  user-select: none;
-}
-
 }
