@@ -18,7 +18,7 @@ const words = [
   { answer: "PUSH", clue: "The opposite of pull, Pusha T's nickname, 4 letters" },
   { answer: "PEN", clue: "A common instrument used for writing or drawing, 3 letters" },
   { answer: "WRITE", clue: "To form letters or words on a surface, 5 letters" },
-  { answer: "MAINE", clue: "A state in the New England, where Cooper Flagg played in high school, 5 letters" },
+  { answer: "MAINE", clue: "A state in New England, where Cooper Flagg played in high school, 5 letters" },
   { answer: "COOPER", clue: "The 1st word in the song title, 6 letters" },
   { answer: "PRINCESS", clue: "Daughter of a king; female royal, 8 letters" },
   { answer: "PEACH", clue: "A soft, juicy fruit with fuzzy skin, booty emoji, 5 letters" },
@@ -94,7 +94,7 @@ function renderClues() {
   });
 }
 
-// Check the user's answer
+// Check the user's answer (called either by Enter or by the 'Submit All' approach)
 function checkAnswer(input, correctAnswer) {
   const userAnswer = input.value.toUpperCase();
   const messageElement = document.getElementById("message");
@@ -130,25 +130,32 @@ function highlightLyrics(answer) {
 // Check if puzzle is complete
 function checkCompletion() {
   const inputs = document.querySelectorAll(".input-box");
-  const allFilled = Array.from(inputs).every(input => 
-    input.value === input.dataset.answer
+  const allFilled = Array.from(inputs).every(
+    input => input.value === input.dataset.answer
   );
   
   if (allFilled) {
-    displayCompletionMessage();
+    displayCompletionMessage(); 
   }
 }
 
-// Display puzzle completion message & link
+// Instead of showing a message here, we redirect to the new "congrats.html"
 function displayCompletionMessage() {
-  const messageElement = document.getElementById("message");
-  messageElement.textContent = "CONGRATULATIONS! YOU'VE COMPLETED THE PUZZLE!";
-  
-  const linkContainer = document.getElementById("link-container");
-  linkContainer.innerHTML = 
-    '<a class="link" href="https://your-album-link.com">CONTINUE LISTENING TO THE ALBUM!</a>';
-  linkContainer.style.display = "block";
+  window.location.href = "congrats.html"; 
 }
 
 // Render the clues upon load
 renderClues();
+
+/* 
+  ADD: "SUBMIT ALL" feature
+  This checks all blanks at once 
+*/
+const submitAllBtn = document.getElementById("submit-all");
+submitAllBtn.addEventListener("click", () => {
+  const inputs = document.querySelectorAll(".input-box");
+  // Loop over each input and check it using the existing function
+  inputs.forEach((input, index) => {
+    checkAnswer(input, words[index].answer);
+  });
+});
