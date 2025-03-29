@@ -18,7 +18,7 @@ const words = [
   { answer: "PUSH", clue: "The opposite of pull, Pusha T's nickname, 4 letters" },
   { answer: "PEN", clue: "A common instrument used for writing or drawing, 3 letters" },
   { answer: "WRITE", clue: "To form letters or words on a surface, 5 letters" },
-  { answer: "MAINE", clue: "A state in New England, where Cooper Flagg played in high school, 5 letters" },
+  { answer: "MAINE", clue: "A state in the New England, where Cooper Flagg played in high school, 5 letters" },
   { answer: "COOPER", clue: "The 1st word in the song title, 6 letters" },
   { answer: "PRINCESS", clue: "Daughter of a king; female royal, 8 letters" },
   { answer: "PEACH", clue: "A soft, juicy fruit with fuzzy skin, booty emoji, 5 letters" },
@@ -29,7 +29,7 @@ const words = [
 ];
 
 // 2) UPDATED LYRICS
-const originalLyrics = `
+const originalLyrics = 
 I only talk to the (solid) ones <br><br>
 That’s usually the thugs you corporate niggas monotonous <br><br>
 You hate when you mocking us and paste when you (copy) us <br><br>
@@ -57,12 +57,12 @@ Guess you ain’t see the (dog) in her my nigga you’re too attached, I’m gon
 (Male) time nigga, (Steve) ass niggas, she call me for male time <br><br>
 
 Wave that Cooper Flagg nigga
-`;
+;
 
 // 3) REPLACE PARENTHESES WITH INPUT BOXES
 const lyricsElement = document.getElementById("lyrics");
 const lyricsWithInputs = originalLyrics.replace(/\((.*?)\)/g, (match, p1) => {
-  return `<input type="text" class="input-box" data-answer="${p1.toUpperCase()}" maxlength="${p1.length}" />`;
+  return <input type="text" class="input-box" data-answer="${p1.toUpperCase()}" maxlength="${p1.length}" />;
 });
 // Display the lyrics with input boxes
 lyricsElement.innerHTML = lyricsWithInputs;
@@ -81,7 +81,7 @@ function renderClues() {
   words.forEach((word, index) => {
     const clueElement = document.createElement("div");
     clueElement.className = "clue";
-    clueElement.innerHTML = `<strong>${index + 1}.</strong> ${word.clue}`;
+    clueElement.innerHTML = <strong>${index + 1}.</strong> ${word.clue};
     cluesContainer.appendChild(clueElement);
 
     // Attach input-box event listener for each word in order
@@ -94,7 +94,7 @@ function renderClues() {
   });
 }
 
-// Check the user's answer (called either by Enter or by the 'Submit All' approach)
+// Check the user's answer
 function checkAnswer(input, correctAnswer) {
   const userAnswer = input.value.toUpperCase();
   const messageElement = document.getElementById("message");
@@ -130,32 +130,25 @@ function highlightLyrics(answer) {
 // Check if puzzle is complete
 function checkCompletion() {
   const inputs = document.querySelectorAll(".input-box");
-  const allFilled = Array.from(inputs).every(
-    input => input.value === input.dataset.answer
+  const allFilled = Array.from(inputs).every(input => 
+    input.value === input.dataset.answer
   );
   
   if (allFilled) {
-    displayCompletionMessage(); 
+    displayCompletionMessage();
   }
 }
 
-// Instead of showing a message here, we redirect to the new "congrats.html"
+// Display puzzle completion message & link
 function displayCompletionMessage() {
-  window.location.href = "congrats.html"; 
+  const messageElement = document.getElementById("message");
+  messageElement.textContent = "CONGRATULATIONS! YOU'VE COMPLETED THE PUZZLE!";
+  
+  const linkContainer = document.getElementById("link-container");
+  linkContainer.innerHTML = 
+    '<a class="link" href="https://your-album-link.com">CONTINUE LISTENING TO THE ALBUM!</a>';
+  linkContainer.style.display = "block";
 }
 
 // Render the clues upon load
 renderClues();
-
-/* 
-  ADD: "SUBMIT ALL" feature
-  This checks all blanks at once 
-*/
-const submitAllBtn = document.getElementById("submit-all");
-submitAllBtn.addEventListener("click", () => {
-  const inputs = document.querySelectorAll(".input-box");
-  // Loop over each input and check it using the existing function
-  inputs.forEach((input, index) => {
-    checkAnswer(input, words[index].answer);
-  });
-});
