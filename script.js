@@ -29,7 +29,7 @@ const words = [
 ];
 
 // 2) UPDATED LYRICS
-const originalLyrics = 
+const originalLyrics = `
 I only talk to the (solid) ones <br><br>
 That’s usually the thugs you corporate niggas monotonous <br><br>
 You hate when you mocking us and paste when you (copy) us <br><br>
@@ -57,12 +57,12 @@ Guess you ain’t see the (dog) in her my nigga you’re too attached, I’m gon
 (Male) time nigga, (Steve) ass niggas, she call me for male time <br><br>
 
 Wave that Cooper Flagg nigga
-;
+`;
 
 // 3) REPLACE PARENTHESES WITH INPUT BOXES
 const lyricsElement = document.getElementById("lyrics");
 const lyricsWithInputs = originalLyrics.replace(/\((.*?)\)/g, (match, p1) => {
-  return <input type="text" class="input-box" data-answer="${p1.toUpperCase()}" maxlength="${p1.length}" />;
+  return `<input type="text" class="input-box" data-answer="${p1.toUpperCase()}" maxlength="${p1.length}" />`;
 });
 // Display the lyrics with input boxes
 lyricsElement.innerHTML = lyricsWithInputs;
@@ -81,7 +81,7 @@ function renderClues() {
   words.forEach((word, index) => {
     const clueElement = document.createElement("div");
     clueElement.className = "clue";
-    clueElement.innerHTML = <strong>${index + 1}.</strong> ${word.clue};
+    clueElement.innerHTML = `<strong>${index + 1}.</strong> ${word.clue}`;
     cluesContainer.appendChild(clueElement);
 
     // Attach input-box event listener for each word in order
