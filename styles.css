@@ -56,7 +56,7 @@
   }
 }
 
-/* TITLE with neon gradient text (not used currently) */
+/* TITLE with neon gradient text */
 .title {
   font-size: 0.7em;
   margin-bottom: 20px;
@@ -116,7 +116,6 @@
   font-size: 0.7em;
   margin-bottom: 15px;
 }
-
 /* INSTRUCTION TEXT */
 #instro {
   color: #ffffff;
@@ -125,7 +124,6 @@
   font-size: 0.7em;
   margin-bottom: 15px;
 }
-
 /* FEEDBACK MESSAGE */
 .message {
   margin-top: 20px;
@@ -180,4 +178,109 @@
   }
   50% {
     transform: scale(1.1);
-    background-color: rgba(0,
+    background-color: rgba(0, 255, 0, 0.3);
+  }
+  100% {
+    transform: scale(1);
+    background-color: rgba(0, 255, 0, 0);
+  }
+}
+
+.correct {
+  color: #00ff00 !important; /* Bright green for success */
+  font-weight: 700;
+  animation: correct-animation 0.5s ease;
+}
+
+/* WRONG ANSWER FLASH */
+.wrong {
+  border: 2px solid red !important;
+}
+
+/* CLUES TOGGLE BUTTON */
+#clues-toggle {
+  position: fixed;
+  /* Remove the top property and replace it with bottom */
+  bottom: 20px;     
+  right: 20px;      
+  z-index: 9999;
+  padding: 10px 15px;
+  background: #f46036;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: background 0.3s ease;
+}
+
+#clues-toggle:hover {
+  background: #f24114;
+}
+
+
+
+/* The side panel itself */
+#clues-panel {
+  position: fixed;
+  top: 0;
+  right: -320px; /* Start off-screen to the right */
+  width: 320px;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  padding: 20px;
+  box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+  transition: right 0.3s ease;
+  z-index: 9998;
+}
+
+#clues-panel.open {
+  right: 0; /* Slide in */
+}
+
+#clues-panel h2 {
+  margin-bottom: 15px;
+  font-size: 1.3em;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+}
+
+#clues {
+  max-height: 80vh; /* scroll within the panel if it's long */
+  overflow-y: auto;
+  font-size: 0.9em;
+  line-height: 1.4;
+}
+
+.clue {
+  margin: 8px 0;
+  position: relative;
+  padding-left: 22px;
+}
+
+.clue::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #fcee0c;
+  font-size: 1em;
+}
+
+/* MEDIA QUERY for small screens */
+@media (max-width: 768px) {
+  .container {
+    margin: 10px auto;
+    padding: 15px;
+  }
+  
+  .title {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+  }
+
+  #lyrics {
+    font-size: 1em;
+  }
+}
