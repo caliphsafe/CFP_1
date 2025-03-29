@@ -146,7 +146,7 @@ function displayCompletionMessage() {
   
   const linkContainer = document.getElementById("link-container");
   linkContainer.innerHTML = 
-    '<a class="link" href="https://your-album-link.com">CONTINUE LISTENING TO THE ALBUM!</a>';
+    '<a class="link" href="solved.html">CLICK HERE FOR UNLOCKED CONTENT</a>';
   linkContainer.style.display = "block";
 }
 
