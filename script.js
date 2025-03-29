@@ -61,19 +61,9 @@ Wave that Cooper Flagg nigga
 
 // 3) REPLACE PARENTHESES WITH INPUT BOXES
 const lyricsElement = document.getElementById("lyrics");
-
-let clueCounter = 0; // track clue number
-
 const lyricsWithInputs = originalLyrics.replace(/\((.*?)\)/g, (match, p1) => {
-  clueCounter++;
-  return `
-    <span class="input-wrapper">
-      <span class="clue-number">${clueCounter}</span>
-      <input type="text" class="input-box" data-answer="${p1.toUpperCase()}" maxlength="${p1.length}" />
-    </span>`;
+  return `<input type="text" class="input-box" data-answer="${p1.toUpperCase()}" maxlength="${p1.length}" />`;
 });
-
-
 // Display the lyrics with input boxes
 lyricsElement.innerHTML = lyricsWithInputs;
 
