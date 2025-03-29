@@ -30,31 +30,31 @@ const words = [
 
 // 2) UPDATED LYRICS
 const originalLyrics = `
-I only talk to the (solid) ones <br><br>
+I only talk to the 1.(solid) ones <br><br>
 That’s usually the thugs you corporate niggas monotonous <br><br>
-You hate when you mocking us and paste when you (copy) us <br><br>
-Either way its Liph at the top of the tree that you (bark)ing up <br><br>
-I down played her crazy dog my (ex) was a machina <br><br>
-I couldn’t see the bot in her or the Blueface (thot) in her <br><br>
-She gave me the angina, but the (stress) never stopping us <br><br>
+You hate when you mocking us and paste when you 2.(copy) us <br><br>
+Either way its Liph at the top of the tree that you 3.(bark)ing up <br><br>
+I down played her crazy dog my 4.(ex) was a machina <br><br>
+I couldn’t see the bot in her or the Blueface 5.(thot) in her <br><br>
+She gave me the angina, but the 6.(stress) never stopping us <br><br>
 One of the few lessons that you’ll learn when you walk with us <br><br>
 So please don’t go moving preposterous<br><br>
-I did enough damage showing the (public) the (private) us <br><br>
+I did enough damage showing the 7.(public) the 8.(private) us <br><br>
 A nigga was popping up I got sick of the hiding cause <br><br>
-Immigration made my parents keep a nigga (Adonis) tucked <br><br>
+Immigration made my parents keep a nigga 9.(Adonis) tucked <br><br>
 But now we worldwide with gold trophies on top of us <br><br>
-All it took was a (Push) and Good Music to pop us up <br><br>
+All it took was a 10.(Push) and Good Music to pop us up <br><br>
 Like, don’t talk to my man like that, I like it when you like that <br><br>
 If it’s beef then its beef, ima fight back <br><br>
-Niggas say we (pen) pals but never (write) back <br><br>
+Niggas say we 11.(pen) pals but never 12.(write) back <br><br>
 You ain’t like that, you don’t know what to do with that <br><br>
-Pop up at your (Maine) event, have you waving the (Cooper) Flagg <br><br>
+Pop up at your 13.(Maine) event, have you waving the 14.(Cooper) Flagg <br><br>
 Point your wife out like who is that? <br><br>
-Your (princess) was throwing me the (peach) and I blew her back <br><br>
-And she got you out here shopping, you ain’t have a clue and you (blue) a bag <br><br>
-Guess you ain’t see the (dog) in her my nigga you’re too attached, I’m gone <br><br>
+Your 15.(princess) was throwing me the 16.(peach) and I blew her back <br><br>
+And she got you out here shopping, you ain’t have a clue and you 17.(blue) a bag <br><br>
+Guess you ain’t see the 18.(dog) in her my nigga you’re too attached, I’m gone <br><br>
 
-(Male) time nigga, (Steve) ass niggas, she call me for male time <br><br>
+19.(Male) time nigga, 20.(Steve) ass niggas, she call me for male time <br><br>
 
 Wave that Cooper Flagg nigga
 `;
