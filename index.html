@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"> 
+  <meta charset="UTF-8">
   <!-- For proper mobile scaling -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Change the theme-color if you like -->
@@ -18,7 +18,7 @@
     Your browser does not support the video tag.
   </video>
 
-  <!-- "CLUES" toggle button (always visible, bottom-right) -->
+  <!-- "CLUES" toggle button (always visible) -->
   <button id="clues-toggle">CLUES</button>
 
   <!-- Slide-out panel for clues -->
@@ -29,13 +29,11 @@
 
   <!-- Main container -->
   <div class="container">
-    
-    <!-- Top Image -->
     <img 
-      src="CFLP.png" 
-      alt="CFLP Image" 
-      style="width: 100%; height: auto;" 
-    />
+  src="CFLP.png" 
+  alt="CFLP Image" 
+  style="width: 100%; height: auto;" 
+/>
     
     <!-- Responsive embed for the YouTube video -->
     <div class="video-container">
@@ -53,26 +51,15 @@
     <!-- Crossword Puzzle Layout (just the lyrics/puzzle) -->
     <div class="crossword-layout">
       <div class="lyrics-container">
-        <p id="instro">
-          Welcome to the <b>Cooper Flagg Lyric Puzzle!</b><br><br>
-          Watch the video above, type your answers into the blanks, and hit <b>Enter / Return</b>. <br><br>
-          Need help? Tap the <b>Clues</b> button (bottom-right). <br>
-          Solve it all, and you might <b>unlock something special!</b>
-        </p>
+        <p id="instro">Welcome to the <b>Cooper Flagg Lyric Puzzle!</b><br><br>Watch the video above, type your answers into the blanks, and hit <b>Enter / Return</b>. <br><br>Need help? Tap the <b>Clues</b> button (bottom-right). <br>Solve it all, and you might <b>unlock something special!</b></p>
         <p id="lyrics"></p>
       </div>
     </div>
 
-    <!-- Submit All button for checking all answers at once -->
-    <button id="submit-all" class="submit-btn">SUBMIT ALL</button>
-
-    <!-- Feedback message & link after completion (not used once we redirect) -->
+    <!-- Feedback message & link after completion -->
     <div id="message" class="message"></div>
     <div id="link-container" class="link-container"></div>
-
-    <p id="instro">
-      Game Experience and Site Designed & Coded By <b>CALIPH</b>
-    </p>
+    <p id="instro">Game Experience and Site Designed & Coded By <b>CALIPH</b></p>
   </div>
 </body>
 </html>
